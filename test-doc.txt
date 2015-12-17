@@ -1,0 +1,206 @@
+Method
+    checkProjectPermissions
+Found usages  (10 usages found)
+    Method call  (10 usages found)
+        redeye-dms  (10 usages found)
+            src/RedEyeApps/RedEyeBundle/Controller  (8 usages found)
+                ApprovalToolController.php  (3 usages found)
+                    ApprovalToolController  (3 usages found)
+                        compareAction  (2 usages found)
+                            (722: 47) if ($permchecker->checkProjectPermissions($user, $project->getId(), 'skip group review')) {
+                            (811: 47) if ($permchecker->checkProjectPermissions($user, $project->getId(), 'skip group review')) {
+                        groupReviewSkipAction  (1 usage found)
+                            (1620: 35) if ($permchecker->checkProjectPermissions($user, $project->getId(), 'skip group review')) {
+                ProjectController.php  (2 usages found)
+                    ProjectController  (2 usages found)
+                        analyticsAction  (1 usage found)
+                            (1290: 28) if (!$permchecker->checkProjectPermissions($user, $id, 'view project analytics')) {
+                        updateAction  (1 usage found)
+                            (856: 28) if (($permchecker->checkProjectPermissions($user, $id, 'edit project')) || ($permchecker->checkProjectPermissionsNew($user, $id, 'edit bucket details'))) {
+                ProjectInviteController.php  (3 usages found)
+                    ProjectInviteController  (3 usages found)
+                        adminRequestAction  (1 usage found)
+                            (684: 32) if (($permchecker->checkProjectPermissions($user, $project->getId(), 'invite project users'))
+                        adminRequestDeclineAction  (1 usage found)
+                            (812: 32) if (($permchecker->checkProjectPermissions($user, $project->getId(), 'invite project users'))
+                        inviteResendAction  (1 usage found)
+                            (504: 32) if (($permchecker->checkProjectPermissions($user, $project->getId(), 'invite project users'))
+            src/RedEyeApps/RedEyeBundle/Services/Workflow  (1 usage found)
+                WorkflowService.php  (1 usage found)
+                    WorkflowService  (1 usage found)
+                        checkWorkflowStepUserPermission  (1 usage found)
+                            (269: 73) $has_workflowsteppermission = $permchecker->checkProjectPermissions($user, $project->getId(), $permissionname);
+            src/RedEyeApps/RedEyeRestBundle/Controller/Artefact/V1  (1 usage found)
+                ApiArtefactController.php  (1 usage found)
+                    ApiArtefactController  (1 usage found)
+                        postUploadArtefactFormDataAction  (1 usage found)
+                            (83: 32) $permitted = $npc->checkProjectPermissions($user, $group, 'bulk upload DWG');
+
+Method
+    checkProjectPermissionsNew
+Found usages  (63 usages found)
+    Method call  (63 usages found)
+        redeye-dms  (63 usages found)
+            src/RedEyeApps/RedEyeBundle/Command  (7 usages found)
+                AllocateTemplateCommand.php  (1 usage found)
+                    AllocateTemplateCommand  (1 usage found)
+                        execute  (1 usage found)
+                            (69: 37) $permission = $permChecker->checkProjectPermissionsNew($user, $group_id, 'upload');
+                BulkFolderUploadCommand.php  (1 usage found)
+                    BulkFolderUploadCommand  (1 usage found)
+                        execute  (1 usage found)
+                            (106: 50) $permissionCheck = $permchecker->checkProjectPermissionsNew($user, $id, 'upload');
+                BulkSingleUploadCommand.php  (1 usage found)
+                    BulkSingleUploadCommand  (1 usage found)
+                        execute  (1 usage found)
+                            (97: 45) $permission = $permchecker->checkProjectPermissionsNew($user, $id, 'upload');
+                MultiPagePDFUploadCommand.php  (1 usage found)
+                    MultiPagePDFUploadCommand  (1 usage found)
+                        execute  (1 usage found)
+                            (69: 50) $permissionCheck = $permchecker->checkProjectPermissionsNew($user, $id, 'upload');
+                MultiPageTIFFUploadCommand.php  (1 usage found)
+                    MultiPageTIFFUploadCommand  (1 usage found)
+                        execute  (1 usage found)
+                            (68: 50) $permissionCheck = $permchecker->checkProjectPermissionsNew($user, $id, 'upload');
+                ReportProjectArtefactsCommand.php  (1 usage found)
+                    ReportProjectArtefactsCommand  (1 usage found)
+                        execute  (1 usage found)
+                            (44: 32) if (($permchecker->checkProjectPermissionsNew($user, $project->getId(), 'view project details'))
+                ZipUploadCommand.php  (1 usage found)
+                    ZipUploadCommand  (1 usage found)
+                        execute  (1 usage found)
+                            (65: 50) $permissionCheck = $permchecker->checkProjectPermissionsNew($user, $id, 'upload');
+            src/RedEyeApps/RedEyeBundle/Controller  (47 usages found)
+                ApprovalController.php  (1 usage found)
+                    ApprovalController  (1 usage found)
+                        prioritychangeAction  (1 usage found)
+                            (452: 53) $has_changepriority = $permchecker->checkProjectPermissionsNew($user, $project->getId(), 'change priority');
+                ArtefactLinkController.php  (2 usages found)
+                    ArtefactLinkController  (2 usages found)
+                        createlinkAction  (1 usage found)
+                            (243: 46) $permquery = (($permchecker->checkProjectPermissionsNew($user, $project_id, 'review draft'))
+                        searchDrawingsAction  (1 usage found)
+                            (375: 45) $permission = $permChecker->checkProjectPermissionsNew($user, $id, 'view');
+                ArtefactUploadController.php  (1 usage found)
+                    ArtefactUploadController  (1 usage found)
+                        uploadAction  (1 usage found)
+                            (267: 49) $permission = $permChecker->checkProjectPermissionsNew($user, $groupId, 'upload');
+                ImagePreviewController.php  (2 usages found)
+                    ImagePreviewController  (2 usages found)
+                        imagePreviewAction  (1 usage found)
+                            (244: 49) $permission = $permchecker->checkProjectPermissionsNew($user, $tempproject->getId(), 'view');
+                        previewAction  (1 usage found)
+                            (608: 49) $permission = $permchecker->checkProjectPermissionsNew($user, $tempproject->getId(), 'view');
+                ProjectController.php  (26 usages found)
+                    ProjectController  (26 usages found)
+                        allocatetemplateAction  (2 usages found)
+                            (1375: 41) $uploadPerm = $permChecker->checkProjectPermissionsNew($user, $project->getId(), 'upload');
+                            (1378: 36) if (($permChecker->checkProjectPermissionsNew($user, $p_id, 'allocate template')) || ($permChecker->checkSitePermissions($user, $project->getSite()->getId(), 'allocate template'))) {
+                        allocatetemplatedoAction  (1 usage found)
+                            (1559: 32) if (($permChecker->checkProjectPermissionsNew($user, $p_id, 'allocate template'))
+                        deleteAction  (2 usages found)
+                            (710: 28) if (($permchecker->checkProjectPermissionsNew($user, $id, 'remove project')) || ($permchecker->checkProjectPermissionsNew($user, $id, 'remove bucket details'))) {
+                            (710: 104) if (($permchecker->checkProjectPermissionsNew($user, $id, 'remove project')) || ($permchecker->checkProjectPermissionsNew($user, $id, 'remove bucket details'))) {
+                        detailsAction  (4 usages found)
+                            (383: 37) $uploadperm = $permchecker->checkProjectPermissionsNew($user, $project->getId(), 'upload');
+                            (390: 31) if ($permchecker->checkProjectPermissionsNew($user, $p_id, 'view')) {
+                            (415: 63) if (null === $totalartefacts && $permchecker->checkProjectPermissionsNew($user, $p_id, 'remove project')) {
+                            (419: 35) if ($permchecker->checkProjectPermissionsNew($user, $p_id, 'edit project', 'edit bucket details')) {
+                        editAction  (1 usage found)
+                            (812: 27) if ($permchecker->checkProjectPermissionsNew($user, $id, 'edit project', 'edit bucket details')) {
+                        getProjectSite  (1 usage found)
+                            (1645: 31) if ($permchecker->checkProjectPermissionsNew($user, $project_id, 'view')) {
+                        indexAction  (2 usages found)
+                            (104: 46) if ($newpermchecker->checkProjectPermissionsNew($user, $project->getId(), 'create project')) {
+                            (124: 52) } elseif ($newpermchecker->checkProjectPermissionsNew($user, $project->getId(), 'upload')) {
+                        latestAction  (2 usages found)
+                            (207: 37) $uploadperm = $permchecker->checkProjectPermissionsNew($user, $project->getId(), 'upload');
+                            (214: 31) if ($permchecker->checkProjectPermissionsNew($user, $p_id, 'view')) {
+                        listuserAction  (4 usages found)
+                            (279: 37) $uploadperm = $permchecker->checkProjectPermissionsNew($user, $project->getId(), 'upload');
+                            (286: 32) if (($permchecker->checkProjectPermissionsNew($user, $p_id, 'list project users')) || ($permchecker->checkSitePermissions($user, $project->getSite()->getId(), 'invite users to bucket'))) {
+                            (299: 36) if (($permchecker->checkProjectPermissionsNew($user, $project->getId(), 'invite project users')) ||
+                            (311: 36) if (($permchecker->checkProjectPermissionsNew($user, $project->getId(), 'remove project users')) ||
+                        projectzipAction  (1 usage found)
+                            (1736: 28) if (($permchecker->checkProjectPermissionsNew($user, $project->getId(), 'view project details'))
+                        removeAction  (1 usage found)
+                            (658: 28) if (($permchecker->checkProjectPermissionsNew($user, $p_id, 'remove project users')) ||
+                        reportsAction  (2 usages found)
+                            (499: 37) $uploadPerm = $permChecker->checkProjectPermissionsNew($user, $group->getId(), 'upload');
+                            (505: 50) if (!$group instanceof Project || !$npc->checkProjectPermissionsNew($user, $p_id, 'view reports', 'view reports')) {
+                        transmittalAction  (2 usages found)
+                            (1680: 37) $uploadperm = $permchecker->checkProjectPermissionsNew($user, $project->getId(), 'upload');
+                            (1686: 27) if ($permchecker->checkProjectPermissionsNew($user, $p_id, 'view transmittal', 'view transmittal')
+                        updateAction  (1 usage found)
+                            (856: 99) if (($permchecker->checkProjectPermissions($user, $id, 'edit project')) || ($permchecker->checkProjectPermissionsNew($user, $id, 'edit bucket details'))) {
+                ProjectInviteController.php  (3 usages found)
+                    ProjectInviteController  (3 usages found)
+                        invitedisabledAction  (1 usage found)
+                            (581: 67) if ($user == $projectinvite->getUser() || $permchecker->checkProjectPermissionsNew($user, $projectinvite->getProject()->getId(), 'invite project users')) {
+                        projectinviteAction  (1 usage found)
+                            (628: 45) $permission = $permChecker->checkProjectPermissionsNew($user, $groupId, 'invite project users');
+                        requestAction  (1 usage found)
+                            (67: 28) if (($permchecker->checkProjectPermissionsNew($user, $id, 'invite project users')) || ($permchecker->checkSitePermissions($user, $project->getSite()->getId(), 'invite users to bucket'))) {
+                ReportController.php  (3 usages found)
+                    ReportController  (3 usages found)
+                        generateGroupReportAction  (1 usage found)
+                            (150: 50) if (!$group instanceof Project || !$npc->checkProjectPermissionsNew($user, $groupId, 'view reports', 'view reports')) {
+                        listGroupReportsAction  (1 usage found)
+                            (120: 50) if (!$group instanceof Project || !$npc->checkProjectPermissionsNew($user, $groupId, 'view reports', 'view reports')) {
+                        reportAction  (1 usage found)
+                            (183: 58) if (!$group instanceof Project || !$npc->checkProjectPermissionsNew($user, $groupId, 'view reports', 'view reports')) {
+                ReportingController.php  (1 usage found)
+                    ReportingController  (1 usage found)
+                        projectartefactscsvAction  (1 usage found)
+                            (180: 28) if (($permchecker->checkProjectPermissionsNew($user, $project->getId(), 'view project details'))
+                RevisionController.php  (1 usage found)
+                    RevisionController  (1 usage found)
+                        revisionAction  (1 usage found)
+                            (79: 45) $permission = $permchecker->checkProjectPermissionsNew($user, $tempproject->getId(), 'view');
+                TemplateController.php  (1 usage found)
+                    TemplateController  (1 usage found)
+                        allocateBulkTemplateAction  (1 usage found)
+                            (379: 31) if ($permChecker->checkProjectPermissionsNew($user, $group->getId(), 'allocate template')) {
+                TransmittalController.php  (2 usages found)
+                    TransmittalController  (2 usages found)
+                        detailsAction  (1 usage found)
+                            (278: 31) if ($permchecker->checkProjectPermissionsNew($user, $id, 'view transmittal', 'view transmittal')) {
+                        downloadAction  (1 usage found)
+                            (872: 31) if ($permchecker->checkProjectPermissionsNew($user, $id, 'view transmittal', 'view transmittal')) {
+                WidgetController.php  (3 usages found)
+                    WidgetController  (3 usages found)
+                        watch_projectAction  (2 usages found)
+                            (242: 43) checkProjectPermissionsNew
+                            (242: 138) checkProjectPermissionsNew
+                        watch_reportAction  (1 usage found)
+                            (306: 66) if (!$group instanceof Project || !$npc->checkProjectPermissionsNew($user, $reportClass->getOptionValue('groupId'), 'view reports', 'view reports')) {
+                WorkflowGaugeController.php  (1 usage found)
+                    WorkflowGaugeController  (1 usage found)
+                        canSubmitRedpenPermission  (1 usage found)
+                            (687: 59) $submitred_permission = $permchecker->checkProjectPermissionsNew($user, $project->getId(), 'request drafting');
+            src/RedEyeApps/RedEyeRestBundle/Controller/Legacy/V1  (8 usages found)
+                APIGroupController.php  (6 usages found)
+                    APIGroupController  (6 usages found)
+                        getGroupUsersAction  (2 usages found)
+                            (474: 24) if (($npc->checkProjectPermissionsNew($user, $groupId, 'list project users')) || ($npc->checkProjectPermissionsNew($user, $groupId, 'invite users to bucket'))) {
+                            (474: 101) if (($npc->checkProjectPermissionsNew($user, $groupId, 'list project users')) || ($npc->checkProjectPermissionsNew($user, $groupId, 'invite users to bucket'))) {
+                        getPendingInvitesAction  (2 usages found)
+                            (535: 24) if (($npc->checkProjectPermissionsNew($user, $groupId, 'list project users')) || ($npc->checkProjectPermissionsNew($user, $groupId, 'invite users to bucket'))) {
+                            (535: 101) if (($npc->checkProjectPermissionsNew($user, $groupId, 'list project users')) || ($npc->checkProjectPermissionsNew($user, $groupId, 'invite users to bucket'))) {
+                        removeRoleFromGroupUserAction  (1 usage found)
+                            (680: 24) if (($npc->checkProjectPermissionsNew($user, $groupId, 'remove project users')) || ($npc->checkSitePermissions($user, $bucketId, 'remove bucket users'))) {
+                        removeUserFromGroupAction  (1 usage found)
+                            (622: 24) if (($npc->checkProjectPermissionsNew($user, $groupId, 'remove project users')) || ($npc->checkSitePermissions($user, $bucketId, 'remove bucket users'))) {
+                APISearchController.php  (2 usages found)
+                    APISearchController  (2 usages found)
+                        advancedSearchAction  (1 usage found)
+                            (230: 41) $permission = $permchecker->checkProjectPermissionsNew($user, $type_id, 'view');
+                        searchBucketProjectDropdownAction  (1 usage found)
+                            (106: 35) if ($permchecker->checkProjectPermissionsNew($user, $project['project_id'], 'invite project users')) {
+            src/StorageBundle/Service/Upload/Artefact  (1 usage found)
+                ArtefactUploadService.php  (1 usage found)
+                    ArtefactUploadService  (1 usage found)
+                        checkUploadPermissions  (1 usage found)
+                            (95: 76) $permission = $permission && $this->permissionChecker->checkProjectPermissionsNew($user, $group->getId(), 'upload');
+
+
